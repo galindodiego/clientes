@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="#">Clientes</a>
         </div>
       </nav>
 
@@ -34,14 +34,19 @@
                         <th scope="col">#</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Data de Nascimento</th>
-                        <th scope="col">Profissão</th>
+                        <th scope="col">Profissão</th>  
                         <th scope="col">Ações</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr th:each="cliente : ${clientes}">
                         <th scope="row" th:text="${cliente.id}"></th>
-                        <td th:text="${cliente.nome}"></td>
+                        <td>
+                          <a 
+                          th:text="${cliente.nome}" 
+                          th:href="@{/cliente/{id} (id=${cliente.id})}"
+                          ></a>
+                        </td>
                         <td th:text="${cliente.dataNascimento}"></td>
                         <td th:text="${cliente.profissao}"></td>
                         <td>

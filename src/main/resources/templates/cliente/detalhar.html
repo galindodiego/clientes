@@ -10,7 +10,7 @@
 
     
 
-    <title>Spring Fundamentos</title>
+    <title>Spring Fundamentos- Detalhes do cliente</title>
 </head>
 <body>
     <nav class="navbar bg-light">
@@ -22,8 +22,26 @@
       <main class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1>Olá Mundo</h1>
+                <h1>Detalhes do cliente</h1>
             </div>
+        </div>
+
+        <div class="row">
+            <div-col-sm-12>
+                <div class="card">
+                    <h5 class="card-header" th:text="${cliente.nome}"></h5>
+                    <div class="card-body">
+                      <p>
+                        Profissão: <span th:text="${cliente.profissao}" ></span>
+                      </p>
+                      <p>
+                        Data de Nascimento: <span th:text="${cliente.dataNascimento}" ></span>
+                      </p>
+                      <a href="" class="btn btn-warning">Editar</a>
+                      <a href="" class="btn btn-danger">Excluir</a>
+                    </div>
+                  </div>
+            </div-col-sm-12>
         </div>
       </main>
 
