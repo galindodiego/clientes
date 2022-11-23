@@ -70,4 +70,25 @@ public class ClienteController {
 
         return modelAndView;
     }
+
+    @GetMapping("/{id}/editar")
+    public ModelAndView editar(@PathVariable Long id){
+        ModelAndView modelAndView = new ModelAndView("cliente/edicao");
+
+        Cliente cliente = clienteRepository.getReferenceById(id);
+
+        modelAndView.addObject("cliente", cliente);
+
+        return modelAndView;
+
+    }
+
+    @PostMapping("/{id}/editar")
+    public ModelAndView editar(Cliente cliente){
+        ModelAndView modelAndView = new ModelAndView("redirect:/cliente");
+
+        clienteRepository.save(cliente);
+
+        return modelAndView;
+    }
 }
